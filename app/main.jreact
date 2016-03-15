@@ -1,14 +1,40 @@
 
-span &nbsp;(v{!major!}.{!minor!}.{!maintenance!}.{!build!})
+div.header.celearfix
+  nav
+    ul.nav.nav-pills.pull-right
+      each val in locals.menu
+        if val == locals.menu_active
+          li.active
+            a(href="#"+val onClick=locals.menuSelect(val))= val
+        else
+          li
+            a(href="#"+val onClick=locals.menuSelect(val))= val
+  h3.text-muted Project name
 
-a(onClick=locals.switchValue("test")) Test
-a(onClick=locals.switchValue("tost")) Tost
 
-if locals.shows == "test"
-  h1 State - locals.shows == "test"
+
+
+if locals.show["jumbotron"]
+  div.jumbotron
+    h1= locals.jumbotron.title
+    p.lead= locals.jumbotron.text
+    p
+      a.btn.btn-lg.btn-success(href="#" role="button") Click
+
 
 if locals.show["test"]
   h1 State - locals.show["test"]
 
 if locals.show["tost"]
-  h1 State - locals.show["tost"]
+  div#createDevForm
+      div.alert.alert-danger.shadow
+          form.form-inline
+              input.form-control(placeholder="Login" value=locals.newDeviceLogin)
+              input.form-control(placeholder="Password" value=locals.newDevicePassword)
+              button.btn.btn-success(type="button" )= "Создать устройство"
+
+
+
+footer.footer
+  div.container
+    p.text-muted Version:&nbsp;(v{!major!}.{!minor!}.{!maintenance!}.{!build!})
