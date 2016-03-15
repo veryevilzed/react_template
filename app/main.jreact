@@ -1,5 +1,11 @@
 
+span &nbsp;(v{!major!}.{!minor!}.{!maintenance!}.{!build!})
 
 if locals.show["test"]
   div#test
-    Hello
+    h1 State - test
+
+
+if locals.show["tost"]
+    div#tost
+      h1 State - tost

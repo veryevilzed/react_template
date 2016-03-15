@@ -7,6 +7,15 @@ state =
 
 render = (data) ->
     state.data = data if data?
+    log state
     React.render(widget(state), document.getElementById("container"))
+
+query = () ->
+  data =
+    show: ["test"]
+  render data
+
+$(document).ready () ->
+    do query
 
 log "workd"
