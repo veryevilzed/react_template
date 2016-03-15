@@ -3,11 +3,14 @@ widget = require("main")
 
 state =
   title: "hello"
-  show: ["test"]
+  show: []
+  shows: "test"
+  switchValue: (val) ->
+    @show[val] = !@show[val]
+    do render
 
 render = (data) ->
     state.data = data if data?
-    log state
     React.render(widget(state), document.getElementById("container"))
 
 query = () ->
