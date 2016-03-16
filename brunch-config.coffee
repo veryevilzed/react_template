@@ -7,7 +7,7 @@ exports.config =
     wrapper: 'commonjs'
   sourceMaps: false
   paths:
-    public: '../resources/public/'
+    public: './public/'
   files:
     javascripts:
       joinTo:
